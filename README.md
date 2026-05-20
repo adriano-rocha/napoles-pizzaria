@@ -6,6 +6,8 @@
 
 **Cardápio digital com pedidos online e pagamento integrado via Stripe**
 
+🔗 **[Acesse o site](https://napoles-pizzaria.vercel.app)**
+
 ![Next.js](https://img.shields.io/badge/Next.js_15-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white)
@@ -42,13 +44,14 @@ A **Nápoles Pizzaria** é uma aplicação fullstack de cardápio digital onde c
 | Framework | Next.js 15 (App Router) |
 | Linguagem | TypeScript |
 | Estilização | Tailwind CSS v4 |
-| Banco de dados | PostgreSQL |
+| Banco de dados | PostgreSQL (Neon) |
 | ORM | Prisma 6 |
 | Pagamentos | Stripe (Checkout + Webhooks) |
 | Estado global | Zustand |
 | UI Components | Radix UI + shadcn/ui |
 | Autenticação | Cookies + bcryptjs |
 | HTTP Client | Axios |
+| Deploy | Vercel |
 
 ---
 
@@ -72,7 +75,7 @@ src/
 │   ├── login-area/        # Botão e formulários de auth
 │   └── ui/                # Componentes base
 ├── stores/                # Zustand (cart, products, auth)
-├── lib/                   # axios, utils
+├── lib/                   # axios, utils, prisma singleton
 └── generated/prisma/      # Client gerado pelo Prisma
 prisma/
 ├── schema.prisma
@@ -114,7 +117,7 @@ Usuário é redirecionado para página de sucesso
 
 ```bash
 # Clone o repositório
-git clone https://github.com/seu-usuario/napoles-pizzaria.git
+git clone https://github.com/adriano-rocha/napoles-pizzaria.git
 cd napoles-pizzaria
 
 # Instale as dependências
@@ -139,7 +142,7 @@ NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY="pk_test_..."
 
 ```bash
 # Cria as tabelas
-npx prisma migrate dev
+npx prisma migrate deploy
 
 # Gera o client
 npx prisma generate
@@ -165,9 +168,13 @@ Acesse [http://localhost:3000](http://localhost:3000)
 
 ---
 
-## 📸 Screenshots
+## 💳 Cartão de teste (Stripe)
 
-> _Adicione aqui screenshots do projeto_
+| Campo | Valor |
+|---|---|
+| Número | `4242 4242 4242 4242` |
+| Validade | Qualquer data futura |
+| CVC | Qualquer 3 dígitos |
 
 ---
 
