@@ -4,6 +4,8 @@ import About from "@/components/home/about";
 import Footer from "@/components/layout/footer";
 import { prisma } from "@/lib/prisma";
 
+export const dynamic = 'force-dynamic';
+
 export default async function Page() {
   const pizzas = await prisma.product.findMany();
 
