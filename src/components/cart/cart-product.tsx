@@ -37,7 +37,7 @@ export const CartProduct = ({ data }: Props) => {
     <div className="flex items-center gap-3">
       <div className="w-10">
         <Image
-          src={product.image}
+          src={`/pizzas/${product.image}`}
           alt={product.name}
           width={100}
           height={100}
