@@ -24,7 +24,7 @@ export const PizzaItem = ({ data }: Props) => {
   return (
     <div className="text-sm bg-white/10 backdrop-blur-md border border-white/20 p-4 rounded-md hover:bg-white/20 transition-all">
       <Image
-        src={data.image}
+        src={`/pizzas/${data.image}`}
         alt={data.name}
         width={200}
         height={200}
